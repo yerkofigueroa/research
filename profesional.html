@@ -1,0 +1,597 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Yerko Figueroa Penarrieta | Postdoctoral Researcher</title>
+    <style>
+        /* --- Define Minimalist Light Palette --- */
+        :root {
+            --bg-deep-light: #f8f9fa; /* Light gray background */
+            --bg-content: #ffffff; /* Pure white for content */
+            --text-primary: #333333; /* Dark gray for text */
+            --text-headings: #0a0a0a; /* Near-black for headings */
+            --text-secondary: #555555; /* Medium gray */
+            --accent-color: #007bff; /* A professional, standard blue */
+            --border-color: #e0e0e0; /* Light gray for borders */
+            --shadow-color: rgba(0, 0, 0, 0.05); /* Light, subtle shadow */
+        }
+
+        /* --- Global Styles --- */
+        html {
+            scroll-behavior: smooth;
+        }
+
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+            line-height: 1.6;
+            background-color: var(--bg-deep-light);
+            color: var(--text-primary);
+            margin: 0;
+            padding: 0;
+        }
+
+        .container {
+            max-width: 1000px;
+            margin: 0 auto;
+            padding: 20px;
+        }
+
+        h1, h2, h3, h4 {
+            color: var(--text-headings);
+            margin-bottom: 0.5em;
+            line-height: 1.3;
+        }
+
+        h1 {
+            font-size: 2.5em;
+            font-weight: 600;
+            border-bottom: 2px solid var(--border-color);
+            padding-bottom: 10px;
+        }
+
+        h2 {
+            font-size: 2em;
+            font-weight: 500;
+            border-bottom: 1px solid var(--accent-color);
+            padding-bottom: 8px;
+            margin-top: 40px;
+        }
+
+        h3 {
+            font-size: 1.5em;
+            color: var(--text-headings);
+            margin-top: 30px;
+        }
+
+        h4 {
+            font-size: 1.2em;
+            color: var(--text-secondary);
+            font-weight: 600;
+        }
+
+        /* Clean Chemical Formula Styling */
+        sub, sup {
+            line-height: 0;
+            position: relative;
+            vertical-align: baseline;
+            font-size: 75%;
+        }
+        sub { bottom: -0.25em; }
+        sup { top: -0.5em; }
+
+        p {
+            margin-bottom: 1em;
+        }
+
+        a {
+            color: var(--accent-color);
+            text-decoration: none;
+            transition: all 0.3s ease;
+        }
+
+        a:hover {
+            text-decoration: none;
+            filter: brightness(0.9); /* Slightly darken on hover */
+        }
+
+        ul {
+            list-style-type: none;
+            padding-left: 0;
+        }
+
+        li {
+            margin-bottom: 0.5em;
+            position: relative;
+            padding-left: 25px;
+        }
+        
+        ul li::before {
+            content: '»';
+            position: absolute;
+            left: 0;
+            top: 0;
+            color: var(--accent-color);
+            font-weight: bold;
+        }
+
+        /* --- Header & Navigation --- */
+        .header {
+            background-color: var(--bg-content);
+            padding: 25px 30px;
+            border-radius: 8px;
+            box-shadow: 0 4px 12px var(--shadow-color);
+            display: flex;
+            flex-wrap: wrap;
+            align-items: center;
+        }
+
+        .header-text {
+            flex: 3;
+            min-width: 300px;
+        }
+
+        .header-contact {
+            flex: 2;
+            min-width: 250px;
+            font-size: 0.9em;
+        }
+
+        .header-contact p {
+            margin: 0.4em 0;
+        }
+        
+        .header-contact strong {
+            color: var(--text-secondary);
+            min-width: 80px;
+            display: inline-block;
+        }
+
+        nav {
+            background-color: var(--bg-content);
+            padding: 10px 0;
+            text-align: center;
+            margin: 20px 0;
+            border-radius: 8px;
+            position: sticky;
+            top: 10px;
+            z-index: 100;
+            box-shadow: 0 4px 12px var(--shadow-color);
+            border: 1px solid var(--border-color);
+        }
+
+        nav a {
+            color: var(--text-primary);
+            padding: 10px 20px;
+            font-weight: 500;
+            text-decoration: none;
+            display: inline-block;
+        }
+
+        nav a:hover {
+            background-color: var(--accent-color);
+            color: #ffffff; /* White text on blue background */
+            border-radius: 4px;
+            filter: none;
+        }
+
+        /* --- Main Content Sections --- */
+        main {
+            background-color: var(--bg-content);
+            padding: 30px;
+            border-radius: 8px;
+            box-shadow: 0 4px 12px var(--shadow-color);
+        }
+
+        .section {
+            margin-bottom: 30px;
+            animation: fade-in-on-scroll 0.8s ease-out;
+            animation-timeline: view();
+            animation-range: entry 0% cover 25%;
+        }
+        
+        @keyframes fade-in-on-scroll {
+            from {
+                opacity: 0;
+                transform: translateY(30px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+        
+        .profile-pic {
+            display: block;
+            margin: 20px auto 30px auto;
+            width: 100%;
+            max-width: 350px;
+            border-radius: 8px;
+            box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+            border: 1px solid var(--border-color);
+        }
+
+        /* --- Publication & Experience Styling --- */
+        .publication-list, .experience-list {
+            list-style-type: none;
+            padding-left: 0;
+        }
+
+        .publication-list li, .experience-list li {
+            margin-bottom: 1.5em;
+            padding-left: 30px;
+            position: relative;
+        }
+
+        .publication-list li::before {
+            content: '📚';
+            position: absolute;
+            left: 0;
+            top: 2px;
+            font-size: 1.1em;
+        }
+
+        .experience-list li::before {
+            content: '💼';
+            position: absolute;
+            left: 0;
+            top: 2px;
+            font-size: 1.1em;
+        }
+        
+        /* --- Education Logo Styling --- */
+        .education-list li {
+            padding-left: 0; /* Remove default padding */
+        }
+
+        .education-list li::before {
+            content: ""; /* Remove the '»' bullet */
+        }
+        
+        .uni-logo {
+            height: 35px; /* Uniform height */
+            width: auto;
+            max-width: 200px;
+            margin-bottom: 10px;
+            /* REMOVED filter - logos will now be full color */
+            opacity: 0.9; 
+        }
+        /* --- End Logo Styling --- */
+
+
+        .publication-list .pub-title {
+            font-weight: 600;
+            display: block;
+            color: var(--text-headings);
+        }
+
+        .publication-list .pub-venue {
+            font-style: italic;
+            color: var(--text-secondary);
+        }
+        
+        .publication-list .pub-doi {
+            font-size: 0.9em;
+        }
+
+        .experience-list .exp-title {
+            font-weight: 600;
+            font-size: 1.1em;
+            display: block;
+            color: var(--text-headings);
+        }
+
+        .experience-list .exp-org {
+            font-style: italic;
+            color: var(--text-secondary);
+            display: block;
+        }
+        
+        .experience-list .exp-date {
+            font-size: 0.9em;
+            color: #888;
+        }
+
+        /* --- Footer --- */
+        footer {
+            text-align: center;
+            margin-top: 30px;
+            font-size: 0.9em;
+            color: #888;
+        }
+
+        /* --- Responsive Design --- */
+        @media (max-width: 768px) {
+            .header {
+                flex-direction: column;
+                align-items: flex-start;
+            }
+
+            .header-contact {
+                margin-top: 20px;
+            }
+
+            nav {
+                position: static;
+            }
+
+            nav a {
+                display: block;
+                padding: 12px;
+            }
+
+            h1 { font-size: 2em; }
+            h2 { font-size: 1.7em; }
+            h3 { font-size: 1.3em; }
+            
+            .section {
+                 animation-range: entry 0% cover 15%;
+            }
+        }
+
+    </style>
+</head>
+<body>
+
+    <div class="container">
+        
+        <header class="header">
+            <div class="header-text">
+                <h1>Yerko Figueroa Penarrieta</h1>
+                <p>Postdoctoral Research Associate</p>
+                <p>University of Wyoming</p>
+            </div>
+            <div class="header-contact">
+                <p><strong>Email:</strong> <a href="mailto:yfiguero@uwyo.edu">yfiguero@uwyo.edu</a></p>
+                <p><strong>Profile:</strong> <a href="https://www.uwyo.edu/geolgeophys/people/researchers/index.html" target="_blank">UWyo Geology & Geophysics</a></p>
+                <p><strong>ORCID:</strong> <a href="https://orcid.org/0009-0001-1794-1822" target="_blank">orcid.org/0009-0001-1794-1822</a></p>
+                <p><strong>Office:</strong> Dept. of Geology & Geophysics</p>
+                <p>Laramie, WY 82071, United States</p>
+            </div>
+        </header>
+
+        <nav>
+            <a href="#about">About Me</a>
+            <a href="#education">Education</a>
+            <a href="#research">Research</a>
+            <a href="#publications">Publications</a>
+            <a href="#experience">Experience</a>
+            <a href="#contact">Contact</a>
+        </nav>
+
+        <main>
+            
+            <section id="about" class="section">
+                <h2>About Me</h2>
+
+                <img src="image_f68d28.jpg" alt="Yerko Figueroa Penarrieta standing on a rock formation in a wide, arid landscape" class="profile-pic">
+                
+                <p>
+                    I am a **Postdoctoral Research Associate** in the Department of **Geology & Geophysics** at the **University of Wyoming**. I successfully defended my Ph.D. in Earth and Environmental Science from New Mexico Institute of Mining and Technology in July 2025.
+                </p>
+                <p>
+                    My current postdoctoral work focuses on the **"Critical Mineral Mobility in Geothermal Reservoirs,"** investigating the behavior of elements like lithium and rare earths in high-temperature brines. This research has dual applications for geothermal energy and carbon storage (CCUS) strategies.
+                </p>
+                <p>
+                    My doctoral research, supervised by Dr. Alexander Gysi, focused on the experimental and thermodynamic modeling of Rare Earth Elements (REE). Specifically, my dissertation investigated the **speciation of Nd hydroxyl and chloride complexes in hydrothermal aqueous fluids** using calorimetry and solubility experiments.
+                </p>
+                <p>
+                    My background combines a B.Sc. in Chemical Engineering from the University of San Simon, Bolivia, with an M.Sc. in Geology from the University of Iceland, where I specialized in Renewable Energy and the geochemistry of geothermal fluids.
+                </p>
+            </section>
+            
+            <section id="education" class="section">
+                <h2>Education</h2>
+                <ul class="experience-list education-list">
+                    <li>
+                        <img src="https://logo.clearbit.com/nmt.edu" alt="New Mexico Tech Logo" class="uni-logo">
+                        <span class="exp-title">Ph.D., Earth and Environmental Science</span>
+                        <span class="exp-org">New Mexico Institute of Mining and Technology, USA</span>
+                        <span class="exp-date">2021 - 2025</span>
+                    </li>
+                    <li>
+                        <img src="https://logo.clearbit.com/hi.is" alt="University of Iceland Logo" class="uni-logo">
+                        <span class="exp-title">M.Sc., Geology (Specialization in Renewable Energy and Geochemistry)</span>
+                        <span class="exp-org">University of Iceland, Iceland</span>
+                        <span class="exp-date">2019 - 2021</span>
+                    </li>
+                    <li>
+                        <img src="https://logo.clearbit.com/umss.edu.bo" alt="University of San Simon Logo" class="uni-logo" style="height: 45px;"> <span class="exp-title">B.Sc., Chemical Engineering</span>
+                        <span class="exp-org">University of San Simon, Bolivia</span>
+                        <span class="exp-date">2008 - 2013</span>
+                    </li>
+                </ul>
+            </section>
+
+            <section id="research" class="section">
+                <h2>Research</h2>
+
+                <h3>Postdoctoral Research (Current)</h3>
+                <p>
+                    My current postdoctoral research at the University of Wyoming is titled: **"Critical Mineral Mobility in Geothermal Reservoirs: Implications for Energy Transition and Subsurface Monitoring"**.
+                </p>
+                <p>
+                    The purpose is to quantify and model the behavior of critical minerals (such as Li, REEs, and Sr) in geothermal and CO<sub>2</sub>-injected systems. This work addresses challenges in both geothermal energy and carbon storage, such as mineral scaling, corrosion, and fluid-rock alteration. The research aims to deliver dual benefits: enabling co-production of minerals and heat in geothermal systems, while also providing novel geochemical tracers for monitoring CO<sub>2</sub> plumes and managing produced water in CCUS and oil & gas operations.
+                </p>
+                <h4>Key Objectives:</h4>
+                <ul class="research-list">
+                    <li>Determine how temperature, pressure, salinity, and fluid chemistry influence REE and Li solubility in geothermal brines.</li>
+                    <li>Quantify the partitioning of REEs, Li, and Sr into common scale phases (e.g., CaCO<sub>3</sub>, BaSO<sub>4</sub>, amorphous silica).</li>
+                    <li>Assess the potential of REE signatures as natural tracers for fluid pathways and CO<sub>2</sub> plume migration.</li>
+                    <li>Develop validated thermodynamic and reactive-transport models (using tools like PHREEQC and TOUGHREACT) to predict critical element mobility from the lab to reservoir scale.</li>
+                </ul>
+                
+                <h3>Doctoral Research</h3>
+                <p>
+                    My Ph.D. dissertation at New Mexico Tech was titled: **"Speciation of Nd hydroxyl and chloride complexes in hydrothermal aqueous fluids: Calorimetry, solubility experiments and thermodynamic modeling"**. This work provided fundamental thermodynamic data for understanding the transport and deposition of critical rare earth elements in geological systems.
+                </p>
+                <p><strong>Supervisor:</strong> Dr. Alexander Gysi</p>
+
+                <h3>Master's Thesis</h3>
+                <p>
+                    At the University of Iceland, my M.Sc. thesis was titled: **"The geochemistry of geothermal fluids of Ölkelduháls and Hveragerði geothermal areas, SW Iceland"**.
+                </p>
+                <p><strong>Supervisors:</strong> Dr. Andri Stefánsson, Finnbogi Óskarsson</p>
+
+                <h3>Key Research Interests</h3>
+                <ul class="research-list">
+                    <li>Hydrothermal geochemistry and experimental geochemistry</li>
+                    <li>Thermodynamic modeling of fluid-rock interactions and mineral deposit formation</li>
+                    <li>Rare earth elements (REE) and critical minerals</li>
+                    <li>Geothermal Energy and Renewable resources</li>
+                    <li>Environmental applications of aqueous geochemistry</li>
+                    <li>Carbon Capture, Utilization, and Storage (CCUS)</li>
+                </ul>
+            </section>
+
+            <section id="publications" class="section">
+                <h2>Publications</h2>
+
+                <h3>Articles in Peer-Reviewed Journals</h3>
+                <ul class="publication-list">
+                    <li>
+                        <span class="pub-title">Hydrothermal solution calorimetry in acidic aqueous solutions and revisiting the standard partial molal thermodynamic properties of Nd<sup>3+</sup> from 25 to 300°C.</span>
+                        <span class="pub-venue">Geochimica et Cosmochimica Acta (in press).</span>
+                        <span class="pub-doi">DOI: <a href="https://doi.org/10.1016/j.gca.2024.07.014" target="_blank">10.1016/j.gca.2024.07.014</a></span>
+                    </li>
+                </ul>
+
+                <h3>Articles in Preparation</h3>
+                <ul class="publication-list">
+                    <li>
+                        <span class="pub-title">Constraints on the thermodynamic properties of Nd<sup>3+</sup> and Nd chloride species from hydrothermal solution calorimetric experiments between 25 and 150°C.</span>
+                        <span class="pub-venue">Chemical Geology (in preparation).</span>
+                    </li>
+                    <li>
+                        <span class="pub-title">The solubility of Nd(OH)<sub>3</sub>(s) in hydrothermal acidic aqueous solutions from 25 to 250°C.</span>
+                        <span class="pub-venue">Chemical Geology (in preparation).</span>
+                    </li>
+                </ul>
+
+                <h3>Theses and Dissertations</h3>
+                 <ul class="publication-list">
+                    <li>
+                        <span class="pub-title">The geochemistry of geothermal fluids of Ölkelduháls and Hveragerði geothermal areas, SW Iceland.</span>
+                        <span class="pub-venue">M.Sc. Dissertation, University of Iceland (2021).</span>
+                    </li>
+                    <li>
+                        <span class="pub-title">Geochemical and isotopic characteristics of Laguna Colorada geothermal area - SW Bolivia.</span>
+                        <span class="pub-venue">Geothermal training in Iceland (16) 229-256 (2018).</span>
+                    </li>
+                    <li>
+                        <span class="pub-title">Technical and economical requirements for a geosciences laboratory in Bolivia.</span>
+                        <span class="pub-venue">Thesis dissertation, University of El Salvador (2016).</span>
+                    </li>
+                </ul>
+            </section>
+            
+            <section id="experience" class="section">
+                <h2>Experience</h2>
+
+                <h3>Research & Teaching Appointments</h3>
+                <ul class="experience-list education-list"> <li>
+                        <img src="https://logo.clearbit.com/uwyo.edu" alt="University of Wyoming Logo" class="uni-logo">
+                        <span class="exp-title">Post Doctoral Research Associate</span>
+                        <span class="exp-org">Department of Geology & Geophysics, University of Wyoming</span>
+                        <span class="exp-date">2025 - Present</span>
+                    </li>
+                    <li>
+                        <span class="exp-title" style="padding-left: 30px;">Research Assistant</span> <span class="exp-org" style="padding-left: 30px;">Ore Deposits and Critical Minerals experimental laboratory, New Mexico Bureau of Geology and Mineral Resources</span>
+                        <span class="exp-date" style="padding-left: 30px;">2021 - 2025</span>
+                    </li>
+                    <li>
+                        <span class="exp-title" style="padding-left: 30px;">Research Assistant</span>
+                        <span class="exp-org" style="padding-left: 30px;">Geochemical laboratory, Icelandic Geosurvey</span>
+                        <span class="exp-date" style="padding-left: 30px;">2019 - 2021</span>
+                    </li>
+                    <li>
+                        <span class="exp-title" style="padding-left: 30px;">Instructor (Physical Chemistry, Thermodynamics 1)</span>
+                        <span class="exp-org" style="padding-left: 30px;">University of San Simon</span>
+                        <span class="exp-date" style="padding-left: 30px;">2014 - 2015</span>
+                    </li>
+                    <li>
+                        <span class="exp-title" style="padding-left: 30px;">Research Assistant</span>
+                        <span class="exp-org" style="padding-left: 30px;">Water Quality laboratory, University of San Simon</span>
+                        <span class="exp-date" style="padding-left: 30px;">2012 - 2013</span>
+                    </li>
+                     <li>
+                        <span class="exp-title" style="padding-left: 30px;">Teaching Assistant (Physical chemistry lab, Chemistry lab)</span>
+                        <span class="exp-org" style="padding-left: 30px;">University of San Simon</span>
+                        <span class="exp-date" style="padding-left: 30px;">2009 - 2010</span>
+                    </li>
+                </ul>
+                
+                <h3>Professional Experience</h3>
+                <ul class="experience-list">
+                    <li>
+                        <span class="exp-title">Geochemist technician</span>
+                        <span class="exp-org">Bolivian Electricity Company (Bolivia)</span>
+                        <span class="exp-date">2015 - 2019</span>
+                    </li>
+                    <li>
+                        <span class="exp-title">Academic coordinator</span>
+                        <span class="exp-org">University of San Simon (Bolivia)</span>
+                        <span class="exp-date">2014 - 2016</span>
+                    </li>
+                    <li>
+                        <span class="exp-title">Chemist technician</span>
+                        <span class="exp-org">Asientos Mines (Bolivia)</span>
+                        <span class="exp-date">2013 - 2014</span>
+                    </li>
+                </ul>
+
+                <h3>Honors & Fellowships</h3>
+                <ul class="experience-list">
+                    <li>
+                        <span class="exp-title">Wycoff Memorial Scholarship Ph.D. Studentship</span>
+                        <span class="exp-date">2023</span>
+                    </li>
+                    <li>
+                        <span class="exp-title">Geothermal Training Program Research Fellowship</span>
+                        <span class="exp-org">University of Iceland</span>
+                        <span class="exp-date">2018</span>
+                    </li>
+                    <li>
+                        <span class="exp-title">Knowledge Co-Creation Program Fellowship in Renewable Energy</span>
+                        <span class="exp-org">Japan International Cooperation Agency</span>
+                        <span class="exp-date">2016</span>
+                    </li>
+                    <li>
+                        <span class="exp-title">Postgraduate Diploma in Geothermal Energy</span>
+                        <span class="exp-org">University El Salvador</span>
+                        <span class="exp-date">2016</span>
+                    </li>
+                    <li>
+                        <span class="exp-title">Academic excellence recognition B.Sc.</span>
+                        <span class="exp-org">University of San Simon</span>
+                        <span class="exp-date">2013</span>
+                    </li>
+                </ul>
+            </section>
+
+            <section id="contact" class="section">
+                <h2>Contact</h2>
+                <p>I am always open to discussing new research, collaborations, and opportunities.</p>
+                <p>
+                    <strong>Email:</strong> <a href="mailto:yfiguero@uwyo.edu">yfiguero@uwyo.edu</a><br>
+                    <strong>University Profile:</strong> <a href="httpsStorage: //www.uwyo.edu/geolgeophys/people/researchers/index.html" target="_blank">https://www.uwyo.edu/geolgeophys/people/researchers/index.html</a><br>
+                    <strong>Office Address:</strong><br>
+                    Department of Geology & Geophysics<br>
+                    University of Wyoming<br>
+                    Laramie, WY 82071, United States
+                </p>
+            </section>
+        
+        </main>
+
+        <footer>
+            <p>&copy; <span id="current-year"></span> Yerko Figueroa Penarrieta. All rights reserved.</p>
+            <script>
+                document.getElementById('current-year').textContent = new Date().getFullYear();
+            </script>
+        </footer>
+
+    </div>
+
+</body>
+</html>

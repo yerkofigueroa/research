@@ -105,7 +105,7 @@
             position: relative;
             padding-left: 25px;
         }
-
+        
         ul li::before {
             content: '»';
             position: absolute;
@@ -140,7 +140,7 @@
         .header-contact p {
             margin: 0.4em 0;
         }
-
+        
         .header-contact strong {
             color: var(--text-secondary);
             min-width: 80px;
@@ -189,7 +189,7 @@
             animation-timeline: view();
             animation-range: entry 0% cover 25%;
         }
-
+        
         @keyframes fade-in-on-scroll {
             from {
                 opacity: 0;
@@ -200,7 +200,7 @@
                 transform: translateY(0);
             }
         }
-
+        
         .profile-pic {
             display: block;
             margin: 20px auto 30px auto;
@@ -238,7 +238,7 @@
             top: 2px;
             font-size: 1.1em;
         }
-
+        
         /* --- Education Logo Styling --- */
         .education-list li {
             padding-left: 0; /* Remove default padding */
@@ -247,14 +247,13 @@
         .education-list li::before {
             content: ""; /* Remove the '»' bullet */
         }
-
+        
         .uni-logo {
             height: 35px; /* Uniform height */
             width: auto;
             max-width: 200px;
             margin-bottom: 10px;
-            /* REMOVED filter - logos will now be full color */
-            opacity: 0.9;
+            opacity: 0.9; 
         }
         /* --- End Logo Styling --- */
 
@@ -269,7 +268,7 @@
             font-style: italic;
             color: var(--text-secondary);
         }
-
+        
         .publication-list .pub-doi {
             font-size: 0.9em;
         }
@@ -286,7 +285,7 @@
             color: var(--text-secondary);
             display: block;
         }
-
+        
         .experience-list .exp-date {
             font-size: 0.9em;
             color: #888;
@@ -323,7 +322,7 @@
             h1 { font-size: 2em; }
             h2 { font-size: 1.7em; }
             h3 { font-size: 1.3em; }
-
+            
             .section {
                  animation-range: entry 0% cover 15%;
             }
@@ -334,7 +333,7 @@
 <body>
 
     <div class="container">
-
+        
         <header class="header">
             <div class="header-text">
                 <h1>Yerko Figueroa Penarrieta</h1>
@@ -360,26 +359,26 @@
         </nav>
 
         <main>
-
+            
             <section id="about" class="section">
                 <h2>About Me</h2>
 
                 <img src="image_f68d28.jpg" alt="Yerko Figueroa Penarrieta standing on a rock formation in a wide, arid landscape" class="profile-pic">
-
+                
                 <p>
-                    I am a **Postdoctoral Research Associate** in the Department of **Geology & Geophysics** at the **University of Wyoming**. I successfully defended my Ph.D. in Earth and Environmental Science from New Mexico Institute of Mining and Technology in July 2025.
+                    I am a Postdoctoral Research Associate in the Department of Geology & Geophysics at the University of Wyoming. I successfully defended my Ph.D. in Earth and Environmental Science from New Mexico Institute of Mining and Technology in July 2025.
                 </p>
                 <p>
-                    My current postdoctoral work focuses on the **"Critical Mineral Mobility in Geothermal Reservoirs,"** investigating the behavior of elements like lithium and rare earths in high-temperature brines. This research has dual applications for geothermal energy and carbon storage (CCUS) strategies.
+                    My current postdoctoral work focuses on the "Critical Mineral Mobility in Geothermal Reservoirs," investigating the behavior of elements like lithium and rare earths in high-temperature brines. This research has dual applications for geothermal energy and carbon storage (CCUS) strategies.
                 </p>
                 <p>
-                    My doctoral research, supervised by Dr. Alexander Gysi, focused on the experimental and thermodynamic modeling of Rare Earth Elements (REE). Specifically, my dissertation investigated the **speciation of Nd hydroxyl and chloride complexes in hydrothermal aqueous fluids** using calorimetry and solubility experiments.
+                    My doctoral research, supervised by Dr. Alexander Gysi, focused on the experimental and thermodynamic modeling of Rare Earth Elements (REE). Specifically, my dissertation investigated the speciation of Nd hydroxyl and chloride complexes in hydrothermal aqueous fluids using calorimetry and solubility experiments.
                 </p>
                 <p>
                     My background combines a B.Sc. in Chemical Engineering from the University of San Simon, Bolivia, with an M.Sc. in Geology from the University of Iceland, where I specialized in Renewable Energy and the geochemistry of geothermal fluids.
                 </p>
             </section>
-
+            
             <section id="education" class="section">
                 <h2>Education</h2>
                 <ul class="experience-list education-list">
@@ -396,7 +395,8 @@
                         <span class="exp-date">2019 - 2021</span>
                     </li>
                     <li>
-                        <img src="https://logo.clearbit.com/umss.edu.bo" alt="University of San Simon Logo" class="uni-logo" style="height: 45px;"> <span class="exp-title">B.Sc., Chemical Engineering</span>
+                        <img src="https://logo.clearbit.com/umss.edu.bo" alt="University of San Simon Logo" class="uni-logo" style="height: 45px;"> 
+                        <span class="exp-title">B.Sc., Chemical Engineering</span>
                         <span class="exp-org">University of San Simon, Bolivia</span>
                         <span class="exp-date">2008 - 2013</span>
                     </li>
@@ -408,28 +408,28 @@
 
                 <h3>Postdoctoral Research (Current)</h3>
                 <p>
-                    My current postdoctoral research at the University of Wyoming is titled: **"Critical Mineral Mobility in Geothermal Reservoirs: Implications for Energy Transition and Subsurface Monitoring"**.
+                    My current postdoctoral research at the University of Wyoming is titled: "Critical Mineral Mobility in Geothermal Reservoirs: Implications for Energy Transition and Subsurface Monitoring".
                 </p>
                 <p>
-                    The purpose is to quantify and model the behavior of critical minerals (such as Li, REEs, and Sr) in geothermal and CO<sub>2</sub>-injected systems. This work addresses challenges in both geothermal energy and carbon storage, such as mineral scaling, corrosion, and fluid-rock alteration. The research aims to deliver dual benefits: enabling co-production of minerals and heat in geothermal systems, while also providing novel geochemical tracers for monitoring CO<sub>2</sub> plumes and managing produced water in CCUS and oil & gas operations.
+                    The purpose is to quantify and model the behavior of critical minerals (such as Li, REEs, and Sr) in geothermal and CO<sub>2</sub>-injected systems. This work addresses challenges in both enhanced geothermal energy and carbon storage, such as mineral scaling, corrosion, and fluid-rock alteration. The research aims to deliver dual benefits: enabling co-production of minerals and heat in geothermal systems, while also providing novel geochemical tracers for monitoring CO<sub>2</sub> plumes and managing produced water in CCUS and oil & gas operations.
                 </p>
                 <h4>Key Objectives:</h4>
                 <ul class="research-list">
                     <li>Determine how temperature, pressure, salinity, and fluid chemistry influence REE and Li solubility in geothermal brines.</li>
                     <li>Quantify the partitioning of REEs, Li, and Sr into common scale phases (e.g., CaCO<sub>3</sub>, BaSO<sub>4</sub>, amorphous silica).</li>
                     <li>Assess the potential of REE signatures as natural tracers for fluid pathways and CO<sub>2</sub> plume migration.</li>
-                    <li>Develop validated thermodynamic and reactive-transport models (using tools like PHREEQC and TOUGHREACT) to predict critical element mobility from the lab to reservoir scale.</li>
+                    <li>Develop validated thermodynamic and reactive-transport models (using tools like PHREEQC and GEM-Selektor) to predict critical element mobility from the lab to reservoir scale.</li>
                 </ul>
-
+                
                 <h3>Doctoral Research</h3>
                 <p>
-                    My Ph.D. dissertation at New Mexico Tech was titled: **"Speciation of Nd hydroxyl and chloride complexes in hydrothermal aqueous fluids: Calorimetry, solubility experiments and thermodynamic modeling"**. This work provided fundamental thermodynamic data for understanding the transport and deposition of critical rare earth elements in geological systems.
+                    My Ph.D. dissertation at New Mexico Tech was titled: "Speciation of Nd hydroxyl and chloride complexes in hydrothermal aqueous fluids: Calorimetry, solubility experiments and thermodynamic modeling". This work provided fundamental thermodynamic data for understanding the transport and deposition of critical rare earth elements in geological systems.
                 </p>
                 <p><strong>Supervisor:</strong> Dr. Alexander Gysi</p>
 
                 <h3>Master's Thesis</h3>
                 <p>
-                    At the University of Iceland, my M.Sc. thesis was titled: **"The geochemistry of geothermal fluids of Ölkelduháls and Hveragerði geothermal areas, SW Iceland"**.
+                    At the University of Iceland, my M.Sc. thesis was titled: "The geochemistry of geothermal fluids of Ölkelduháls and Hveragerði geothermal areas, SW Iceland".
                 </p>
                 <p><strong>Supervisors:</strong> Dr. Andri Stefánsson, Finnbogi Óskarsson</p>
 
@@ -451,20 +451,20 @@
                 <ul class="publication-list">
                     <li>
                         <span class="pub-title">Hydrothermal solution calorimetry in acidic aqueous solutions and revisiting the standard partial molal thermodynamic properties of Nd<sup>3+</sup> from 25 to 300°C.</span>
-                        <span class="pub-venue">Geochimica et Cosmochimica Acta (in press).</span>
+                        <span class="pub-venue">Geochimica et Cosmochimica Acta.</span>
                         <span class="pub-doi">DOI: <a href="https://doi.org/10.1016/j.gca.2024.07.014" target="_blank">10.1016/j.gca.2024.07.014</a></span>
+                    </li>
+                    <li>
+                        <span class="pub-title">Internally consistent thermodynamic properties of Nd chloride aqueous species and Nd<sup>3+</sup> derived from hydrothermal solution calorimetry at 25‒150 °C</span>
+                        <span class="pub-venue">Chemical Geology (in press, accepted Dec 2025).</span>
                     </li>
                 </ul>
 
-                <h3>Articles in Preparation</h3>
+                <h3>Articles in Review</h3>
                 <ul class="publication-list">
                     <li>
-                        <span class="pub-title">Constraints on the thermodynamic properties of Nd<sup>3+</sup> and Nd chloride species from hydrothermal solution calorimetric experiments between 25 and 150°C.</span>
-                        <span class="pub-venue">Chemical Geology (in preparation).</span>
-                    </li>
-                    <li>
                         <span class="pub-title">The solubility of Nd(OH)<sub>3</sub>(s) in hydrothermal acidic aqueous solutions from 25 to 250°C.</span>
-                        <span class="pub-venue">Chemical Geology (in preparation).</span>
+                        <span class="pub-venue">Geochimica et Cosmochimica Acta (in revision).</span>
                     </li>
                 </ul>
 
@@ -484,19 +484,21 @@
                     </li>
                 </ul>
             </section>
-
+            
             <section id="experience" class="section">
                 <h2>Experience</h2>
 
                 <h3>Research & Teaching Appointments</h3>
-                <ul class="experience-list education-list"> <li>
+                <ul class="experience-list education-list"> 
+                    <li>
                         <img src="https://logo.clearbit.com/uwyo.edu" alt="University of Wyoming Logo" class="uni-logo">
                         <span class="exp-title">Post Doctoral Research Associate</span>
                         <span class="exp-org">Department of Geology & Geophysics, University of Wyoming</span>
                         <span class="exp-date">2025 - Present</span>
                     </li>
                     <li>
-                        <span class="exp-title" style="padding-left: 30px;">Research Assistant</span> <span class="exp-org" style="padding-left: 30px;">Ore Deposits and Critical Minerals experimental laboratory, New Mexico Bureau of Geology and Mineral Resources</span>
+                        <span class="exp-title" style="padding-left: 30px;">Research Assistant</span> 
+                        <span class="exp-org" style="padding-left: 30px;">Ore Deposits and Critical Minerals experimental laboratory, New Mexico Bureau of Geology and Mineral Resources</span>
                         <span class="exp-date" style="padding-left: 30px;">2021 - 2025</span>
                     </li>
                     <li>
@@ -520,7 +522,7 @@
                         <span class="exp-date" style="padding-left: 30px;">2009 - 2010</span>
                     </li>
                 </ul>
-
+                
                 <h3>Professional Experience</h3>
                 <ul class="experience-list">
                     <li>
@@ -574,14 +576,14 @@
                 <p>I am always open to discussing new research, collaborations, and opportunities.</p>
                 <p>
                     <strong>Email:</strong> <a href="mailto:yfiguero@uwyo.edu">yfiguero@uwyo.edu</a><br>
-                    <strong>University Profile:</strong> <a href="httpsStorage: //www.uwyo.edu/geolgeophys/people/researchers/index.html" target="_blank">https://www.uwyo.edu/geolgeophys/people/researchers/index.html</a><br>
+                    <strong>University Profile:</strong> <a href="https://www.uwyo.edu/geolgeophys/people/researchers/index.html" target="_blank">https://www.uwyo.edu/geolgeophys/people/researchers/index.html</a><br>
                     <strong>Office Address:</strong><br>
                     Department of Geology & Geophysics<br>
                     University of Wyoming<br>
                     Laramie, WY 82071, United States
                 </p>
             </section>
-
+        
         </main>
 
         <footer>

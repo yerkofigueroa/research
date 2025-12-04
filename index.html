@@ -7,20 +7,18 @@
     <style>
         /* --- Define Minimalist Light Palette --- */
         :root {
-            --bg-deep-light: #f8f9fa; /* Light gray background */
-            --bg-content: #ffffff; /* Pure white for content */
-            --text-primary: #333333; /* Dark gray for text */
-            --text-headings: #0a0a0a; /* Near-black for headings */
-            --text-secondary: #555555; /* Medium gray */
-            --accent-color: #007bff; /* A professional, standard blue */
-            --border-color: #e0e0e0; /* Light gray for borders */
-            --shadow-color: rgba(0, 0, 0, 0.05); /* Light, subtle shadow */
+            --bg-deep-light: #f8f9fa;
+            --bg-content: #ffffff;
+            --text-primary: #333333;
+            --text-headings: #0a0a0a;
+            --text-secondary: #555555;
+            --accent-color: #007bff;
+            --border-color: #e0e0e0;
+            --shadow-color: rgba(0, 0, 0, 0.05);
         }
 
         /* --- Global Styles --- */
-        html {
-            scroll-behavior: smooth;
-        }
+        html { scroll-behavior: smooth; }
 
         body {
             font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
@@ -80,9 +78,7 @@
         sub { bottom: -0.25em; }
         sup { top: -0.5em; }
 
-        p {
-            margin-bottom: 1em;
-        }
+        p { margin-bottom: 1em; }
 
         a {
             color: var(--accent-color);
@@ -92,7 +88,7 @@
 
         a:hover {
             text-decoration: none;
-            filter: brightness(0.9); /* Slightly darken on hover */
+            filter: brightness(0.9);
         }
 
         ul {
@@ -137,9 +133,7 @@
             font-size: 0.9em;
         }
 
-        .header-contact p {
-            margin: 0.4em 0;
-        }
+        .header-contact p { margin: 0.4em 0; }
         
         .header-contact strong {
             color: var(--text-secondary);
@@ -147,17 +141,26 @@
             display: inline-block;
         }
 
+        /* --- Updated Navbar Styling --- */
         nav {
             background-color: var(--bg-content);
-            padding: 10px 0;
-            text-align: center;
+            padding: 10px 20px;
             margin: 20px 0;
             border-radius: 8px;
             position: sticky;
             top: 10px;
-            z-index: 100;
+            z-index: 1000; /* Increased z-index */
             box-shadow: 0 4px 12px var(--shadow-color);
             border: 1px solid var(--border-color);
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+
+        /* Container for links to manage them nicely */
+        .nav-links-container {
+            display: flex;
+            gap: 5px;
         }
 
         nav a {
@@ -166,14 +169,22 @@
             font-weight: 500;
             text-decoration: none;
             display: inline-block;
+            border-radius: 4px;
             transition: background-color 0.3s, color 0.3s;
         }
 
         nav a:hover, nav a.active {
             background-color: var(--accent-color);
-            color: #ffffff; /* White text on blue background */
-            border-radius: 4px;
-            filter: none;
+            color: #ffffff;
+        }
+
+        /* Hamburger Menu Icon (Hidden on Desktop) */
+        .nav-toggle {
+            display: none;
+            font-size: 24px;
+            cursor: pointer;
+            color: var(--text-primary);
+            padding: 5px;
         }
 
         /* --- Main Content Sections --- */
@@ -189,30 +200,24 @@
             animation: fade-in-on-scroll 0.8s ease-out;
             animation-timeline: view();
             animation-range: entry 0% cover 25%;
-            scroll-margin-top: 80px; /* Add margin for sticky nav */
+            scroll-margin-top: 80px;
         }
         
         @keyframes fade-in-on-scroll {
-            from {
-                opacity: 0;
-                transform: translateY(30px);
-            }
-            to {
-                opacity: 1;
-                transform: translateY(0);
-            }
+            from { opacity: 0; transform: translateY(30px); }
+            to { opacity: 1; transform: translateY(0); }
         }
         
-        /* --- Carousel Styles (One Photo at a Time) --- */
+        /* --- Carousel Styles --- */
         .carousel-container {
             position: relative;
-            max-width: 500px; /* Adjust width as needed */
+            max-width: 500px;
             margin: 20px auto 30px auto;
             border-radius: 8px;
             overflow: hidden;
             box-shadow: 0 4px 8px rgba(0,0,0,0.1);
             border: 1px solid var(--border-color);
-            aspect-ratio: 4/3; /* Set aspect ratio for images */
+            aspect-ratio: 4/3;
         }
 
         .carousel-slide {
@@ -229,15 +234,13 @@
         .carousel-slide img {
             width: 100%;
             height: 100%;
-            object-fit: cover; /* Ensures images cover area without distortion */
+            object-fit: cover;
         }
 
-        /* Fading animation */
         @keyframes fade {
             from {opacity: .4} 
             to {opacity: 1}
         }
-        /* --- End Carousel Styles --- */
 
         /* --- Publication & Experience Styling --- */
         .publication-list, .experience-list {
@@ -268,23 +271,16 @@
         }
         
         /* --- Education Logo Styling --- */
-        .education-list li {
-            padding-left: 0; /* Remove default padding */
-        }
-
-        .education-list li::before {
-            content: ""; /* Remove the '»' bullet */
-        }
+        .education-list li { padding-left: 0; }
+        .education-list li::before { content: ""; }
         
         .uni-logo {
-            height: 35px; /* Uniform height */
+            height: 35px;
             width: auto;
             max-width: 200px;
             margin-bottom: 10px;
             opacity: 0.9; 
         }
-        /* --- End Logo Styling --- */
-
 
         .publication-list .pub-title {
             font-weight: 600;
@@ -297,9 +293,7 @@
             color: var(--text-secondary);
         }
         
-        .publication-list .pub-doi {
-            font-size: 0.9em;
-        }
+        .publication-list .pub-doi { font-size: 0.9em; }
 
         .experience-list .exp-title {
             font-weight: 600;
@@ -319,20 +313,13 @@
             color: #888;
         }
         
-        /* Research list styling - Normal Bullet Points */
+        /* Research list styling */
         .research-list {
-             list-style-type: disc; /* Standard disc bullet */
+             list-style-type: disc;
              padding-left: 20px;
         }
-        
-        .research-list li {
-             padding-left: 5px; /* Adjust padding */
-        }
-
-        .research-list li::before {
-             content: none; /* Remove custom arrow/microscope content */
-        }
-
+        .research-list li { padding-left: 5px; }
+        .research-list li::before { content: none; }
 
         /* --- Footer --- */
         footer {
@@ -342,33 +329,52 @@
             color: #888;
         }
 
-        /* --- Responsive Design --- */
+        /* --- Responsive Design (FIXED) --- */
         @media (max-width: 768px) {
             .header {
                 flex-direction: column;
                 align-items: flex-start;
             }
 
-            .header-contact {
-                margin-top: 20px;
+            .header-contact { margin-top: 20px; }
+
+            /* Fix Navbar for Mobile */
+            nav {
+                justify-content: space-between; /* Space between Toggle and Title/Empty */
+                flex-wrap: wrap;
+                padding: 10px 15px;
             }
 
-            nav {
-                position: static;
+            .nav-toggle {
+                display: block; /* Show hamburger icon */
+            }
+
+            .nav-links-container {
+                display: none; /* Hide links by default */
+                flex-direction: column;
+                width: 100%;
+                margin-top: 15px;
+                border-top: 1px solid var(--border-color);
+            }
+
+            .nav-links-container.active {
+                display: flex; /* Show links when toggled */
             }
 
             nav a {
                 display: block;
-                padding: 12px;
+                width: 100%;
+                text-align: left;
+                padding: 15px 5px;
+                border-bottom: 1px solid #eee;
+                box-sizing: border-box; /* Ensure padding doesn't break width */
             }
 
             h1 { font-size: 2em; }
             h2 { font-size: 1.7em; }
             h3 { font-size: 1.3em; }
             
-            .section {
-                 animation-range: entry 0% cover 15%;
-            }
+            .section { animation-range: entry 0% cover 15%; }
         }
 
     </style>
@@ -393,12 +399,16 @@
         </header>
 
         <nav id="navbar">
-            <a href="#about" class="nav-link">About Me</a>
-            <a href="#education" class="nav-link">Education</a>
-            <a href="#research" class="nav-link">Research</a>
-            <a href="#publications" class="nav-link">Publications</a>
-            <a href="#experience" class="nav-link">Experience</a>
-            <a href="#contact" class="nav-link">Contact</a>
+            <span class="nav-toggle" id="js-navbar-toggle">
+                &#9776; </span>
+            <div class="nav-links-container" id="js-menu">
+                <a href="#about" class="nav-link">About Me</a>
+                <a href="#education" class="nav-link">Education</a>
+                <a href="#research" class="nav-link">Research</a>
+                <a href="#publications" class="nav-link">Publications</a>
+                <a href="#experience" class="nav-link">Experience</a>
+                <a href="#contact" class="nav-link">Contact</a>
+            </div>
         </nav>
 
         <main>
@@ -406,7 +416,6 @@
             <section id="about" class="section">
                 <h2>About Me</h2>
 
-                <!-- CAROUSEL SECTION -->
                 <div class="carousel-container">
                     <div class="carousel-slide active">
                         <img src="image_f68d28.jpg" alt="Yerko Figueroa Penarrieta standing on a rock formation">
@@ -427,8 +436,6 @@
                         <img src="image_f68d33.jpg" alt="Placeholder Image 6">
                     </div>
                 </div>
-                <!-- END CAROUSEL SECTION -->
-                
                 <p>
                     I am a <strong>Postdoctoral Research Associate</strong> in the Department of <strong>Geology & Geophysics</strong> at the <strong>University of Wyoming</strong>. I work in the <strong>Experimental Geochemistry Laboratory</strong> with Dr. John Kaszuba's research group. My current postdoctoral work focuses on <strong>"Critical Mineral Mobility in Geothermal Reservoirs,"</strong> investigating the behavior of elements like lithium and rare earths in high-temperature brines. This research supports the group's broader mission to understand fundamental fluid-rock interactions in energy systems and apply these insights to societal challenges like the Energy Transition and geologic carbon sequestration.
                 </p>
@@ -570,7 +577,7 @@
                         <span class="exp-org" style="padding-left: 30px;">Water Quality laboratory, University of San Simon</span>
                         <span class="exp-date" style="padding-left: 30px;">2012 - 2013</span>
                     </li>
-                     <li>
+                      <li>
                         <span class="exp-title" style="padding-left: 30px;">Teaching Assistant (Physical chemistry lab, Chemistry lab)</span>
                         <span class="exp-org" style="padding-left: 30px;">University of San Simon</span>
                         <span class="exp-date" style="padding-left: 30px;">2009 - 2010</span>
@@ -595,36 +602,6 @@
                         <span class="exp-date">2013 - 2014</span>
                     </li>
                 </ul>
-
-                <!-- 
-                <h3>Honors & Fellowships</h3>
-                <ul class="experience-list">
-                    <li>
-                        <span class="exp-title">Wycoff Memorial Scholarship Ph.D. Studentship</span>
-                        <span class="exp-date">2023</span>
-                    </li>
-                    <li>
-                        <span class="exp-title">Geothermal Training Program Research Fellowship</span>
-                        <span class="exp-org">University of Iceland</span>
-                        <span class="exp-date">2018</span>
-                    </li>
-                    <li>
-                        <span class="exp-title">Knowledge Co-Creation Program Fellowship in Renewable Energy</span>
-                        <span class="exp-org">Japan International Cooperation Agency</span>
-                        <span class="exp-date">2016</span>
-                    </li>
-                    <li>
-                        <span class="exp-title">Postgraduate Diploma in Geothermal Energy</span>
-                        <span class="exp-org">University El Salvador</span>
-                        <span class="exp-date">2016</span>
-                    </li>
-                    <li>
-                        <span class="exp-title">Academic excellence recognition B.Sc.</span>
-                        <span class="exp-org">University of San Simon</span>
-                        <span class="exp-date">2013</span>
-                    </li>
-                </ul>
-                -->
             </section>
 
             <section id="contact" class="section">
@@ -648,6 +625,14 @@
             <script>
                 document.getElementById('current-year').textContent = new Date().getFullYear();
                 
+                // JavaScript for Navbar Toggle
+                const mainNav = document.getElementById('js-menu');
+                const navBarToggle = document.getElementById('js-navbar-toggle');
+                
+                navBarToggle.addEventListener('click', function () {
+                    mainNav.classList.toggle('active');
+                });
+
                 // JavaScript for Scroll Spy (Highlight Active Nav Link)
                 document.addEventListener('DOMContentLoaded', function() {
                     const sections = document.querySelectorAll('.section');
@@ -673,6 +658,15 @@
                         });
                     });
                     
+                    // Close mobile menu when a link is clicked
+                    navLinks.forEach(link => {
+                        link.addEventListener('click', () => {
+                            if(window.innerWidth <= 768) {
+                                mainNav.classList.remove('active');
+                            }
+                        });
+                    });
+
                     // Carousel Logic
                     let slideIndex = 0;
                     const slides = document.getElementsByClassName("carousel-slide");

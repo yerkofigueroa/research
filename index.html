@@ -203,41 +203,60 @@
             }
         }
         
-        /* --- Carousel Styles --- */
+        /* --- NEW Continuous Carousel Styles --- */
         .carousel-container {
             position: relative;
-            max-width: 500px; /* Adjust width as needed */
+            width: 100%;
             margin: 20px auto 30px auto;
+            overflow: hidden; /* Hides the overflow of the long image track */
             border-radius: 8px;
-            overflow: hidden;
             box-shadow: 0 4px 8px rgba(0,0,0,0.1);
             border: 1px solid var(--border-color);
-            aspect-ratio: 4/3; /* Set aspect ratio for images */
+            background-color: #fff;
+        }
+
+        .carousel-track {
+            display: flex;
+            width: calc(250px * 12); /* Width = (Image Width) * (Total Images including duplicates). Example: 6 original + 6 duplicates = 12 */
+            animation: scroll 40s linear infinite; /* Adjust '40s' to change speed */
         }
 
         .carousel-slide {
-            display: none;
-            width: 100%;
-            height: 100%;
+            width: 250px; /* Fixed width for each slide */
+            height: 300px; /* Fixed height for each slide */
+            flex-shrink: 0;
+            padding: 0 5px; /* Gap between images */
+            box-sizing: border-box;
+            transition: transform 0.3s ease; /* Smooth zoom effect */
         }
-        
-        .carousel-slide.active {
-            display: block;
-            animation: fade 1.5s;
-        }
-        
+
         .carousel-slide img {
             width: 100%;
             height: 100%;
-            object-fit: cover; /* Ensures images cover area without distortion */
+            object-fit: cover; /* Ensures images cover the area */
+            border-radius: 4px;
         }
 
-        /* Fading animation */
-        @keyframes fade {
-            from {opacity: .4} 
-            to {opacity: 1}
+        /* Pause animation and zoom on hover */
+        .carousel-container:hover .carousel-track {
+            animation-play-state: paused;
         }
-        
+
+        .carousel-slide:hover {
+            transform: scale(1.05); /* Slight zoom on hover */
+            z-index: 10; /* Bring to front */
+            cursor: pointer;
+        }
+
+        /* Keyframes for infinite scrolling */
+        @keyframes scroll {
+            0% {
+                transform: translateX(0);
+            }
+            100% {
+                transform: translateX(calc(-250px * 6)); /* Move left by width of ONE SET of images (6 images) */
+            }
+        }
         /* --- End Carousel Styles --- */
 
         /* --- Publication & Experience Styling --- */
@@ -370,6 +389,21 @@
             .section {
                  animation-range: entry 0% cover 15%;
             }
+            
+            /* Responsive adjustments for carousel */
+            .carousel-slide {
+                width: 200px; /* Smaller slides on mobile */
+                height: 240px;
+            }
+             .carousel-track {
+                /* Adjust animation for new width */
+                width: calc(200px * 12); 
+                animation: scroll-mobile 30s linear infinite;
+            }
+            @keyframes scroll-mobile {
+                0% { transform: translateX(0); }
+                100% { transform: translateX(calc(-200px * 6)); }
+            }
         }
 
     </style>
@@ -407,30 +441,48 @@
             <section id="about" class="section">
                 <h2>About Me</h2>
 
-                <!-- CAROUSEL SECTION -->
+                <!-- CONTINUOUS CAROUSEL SECTION -->
                 <div class="carousel-container">
-                    <div class="carousel-slide active">
-                        <img src="image_f68d28.jpg" alt="Yerko Figueroa Penarrieta standing on a rock formation">
-                    </div>
-                    <div class="carousel-slide">
-                        <!-- Placeholder Image 2 - Replace src with your image file -->
-                        <img src="image_f68d29.jpg" alt="Placeholder Image 2"> 
-                    </div>
-                    <div class="carousel-slide">
-                        <!-- Placeholder Image 3 -->
-                        <img src="image_f68d30.jpg" alt="Placeholder Image 3">
-                    </div>
-                    <div class="carousel-slide">
-                         <!-- Placeholder Image 4 -->
-                        <img src="image_f68d31.jpg" alt="Placeholder Image 4">
-                    </div>
-                    <div class="carousel-slide">
-                         <!-- Placeholder Image 5 -->
-                        <img src="image_f68d32.jpg" alt="Placeholder Image 5">
-                    </div>
-                    <div class="carousel-slide">
-                         <!-- Placeholder Image 5 -->
-                        <img src="image_f68d33.jpg" alt="Placeholder Image 6">
+                    <div class="carousel-track">
+                        <!-- ORIGINAL 6 IMAGES -->
+                        <div class="carousel-slide">
+                            <img src="image_f68d28.jpg" alt="Photo 1">
+                        </div>
+                        <div class="carousel-slide">
+                            <img src="image_f68d28.jpg" alt="Photo 2">
+                        </div>
+                        <div class="carousel-slide">
+                            <img src="image_f68d28.jpg" alt="Photo 3">
+                        </div>
+                        <div class="carousel-slide">
+                            <img src="image_f68d28.jpg" alt="Photo 4">
+                        </div>
+                        <div class="carousel-slide">
+                            <img src="image_f68d28.jpg" alt="Photo 5">
+                        </div>
+                        <div class="carousel-slide">
+                            <img src="image_f68d28.jpg" alt="Photo 6">
+                        </div>
+
+                        <!-- DUPLICATE IMAGES FOR INFINITE LOOP -->
+                        <div class="carousel-slide">
+                            <img src="image_f68d28.jpg" alt="Photo 1">
+                        </div>
+                        <div class="carousel-slide">
+                            <img src="image_f68d28.jpg" alt="Photo 2">
+                        </div>
+                        <div class="carousel-slide">
+                            <img src="image_f68d28.jpg" alt="Photo 3">
+                        </div>
+                        <div class="carousel-slide">
+                            <img src="image_f68d28.jpg" alt="Photo 4">
+                        </div>
+                        <div class="carousel-slide">
+                            <img src="image_f68d28.jpg" alt="Photo 5">
+                        </div>
+                        <div class="carousel-slide">
+                            <img src="image_f68d28.jpg" alt="Photo 6">
+                        </div>
                     </div>
                 </div>
                 <!-- END CAROUSEL SECTION -->
@@ -682,23 +734,8 @@
                         });
                     });
                     
-                    // Carousel Logic
-                    let slideIndex = 0;
-                    const slides = document.getElementsByClassName("carousel-slide");
-                    
-                    function showSlides() {
-                        for (let i = 0; i < slides.length; i++) {
-                            slides[i].classList.remove("active");
-                        }
-                        slideIndex++;
-                        if (slideIndex > slides.length) {slideIndex = 1}
-                        slides[slideIndex-1].classList.add("active");
-                        setTimeout(showSlides, 4000); // Change image every 4 seconds
-                    }
-                    
-                    if (slides.length > 0) {
-                        showSlides();
-                    }
+                    // No JS required for CSS-only carousel, but can be added for interaction
+                    // Pause on hover handled by CSS
                 });
             </script>
         </footer>

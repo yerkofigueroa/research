@@ -203,15 +203,42 @@
             }
         }
         
-        .profile-pic {
-            display: block;
+        /* --- Carousel Styles --- */
+        .carousel-container {
+            position: relative;
+            max-width: 500px; /* Adjust width as needed */
             margin: 20px auto 30px auto;
-            width: 100%;
-            max-width: 350px;
             border-radius: 8px;
+            overflow: hidden;
             box-shadow: 0 4px 8px rgba(0,0,0,0.1);
             border: 1px solid var(--border-color);
+            aspect-ratio: 4/3; /* Set aspect ratio for images */
         }
+
+        .carousel-slide {
+            display: none;
+            width: 100%;
+            height: 100%;
+        }
+        
+        .carousel-slide.active {
+            display: block;
+            animation: fade 1.5s;
+        }
+        
+        .carousel-slide img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover; /* Ensures images cover area without distortion */
+        }
+
+        /* Fading animation */
+        @keyframes fade {
+            from {opacity: .4} 
+            to {opacity: 1}
+        }
+        
+        /* --- End Carousel Styles --- */
 
         /* --- Publication & Experience Styling --- */
         .publication-list, .experience-list {
@@ -380,10 +407,39 @@
             <section id="about" class="section">
                 <h2>About Me</h2>
 
-                <img src="image_f68d28.jpg" alt="Yerko Figueroa Penarrieta standing on a rock formation in a wide, arid landscape" class="profile-pic">
+                <!-- CAROUSEL SECTION -->
+                <div class="carousel-container">
+                    <div class="carousel-slide active">
+                        <img src="image_f68d28.jpg" alt="Yerko Figueroa Penarrieta standing on a rock formation">
+                    </div>
+                    <div class="carousel-slide">
+                        <!-- Placeholder Image 2 - Replace src with your image file -->
+                        <img src="image_f68d29.jpg" alt="Placeholder Image 2"> 
+                    </div>
+                    <div class="carousel-slide">
+                        <!-- Placeholder Image 3 -->
+                        <img src="image_f68d30.jpg" alt="Placeholder Image 3">
+                    </div>
+                    <div class="carousel-slide">
+                         <!-- Placeholder Image 4 -->
+                        <img src="image_f68d31.jpg" alt="Placeholder Image 4">
+                    </div>
+                    <div class="carousel-slide">
+                         <!-- Placeholder Image 5 -->
+                        <img src="image_f68d32.jpg" alt="Placeholder Image 5">
+                    </div>
+                    <div class="carousel-slide">
+                         <!-- Placeholder Image 5 -->
+                        <img src="image_f68d33.jpg" alt="Placeholder Image 6">
+                    </div>
+                </div>
+                <!-- END CAROUSEL SECTION -->
                 
                 <p>
-                    I am a <strong>Postdoctoral Research Associate</strong> in the Department of <strong>Geology & Geophysics</strong> at the <strong>University of Wyoming</strong>. I work in the <strong>Experimental Geochemistry Laboratory</strong> with Dr. John Kaszuba's research group. My current postdoctoral work focuses on <strong>"Critical Mineral Mobility in Geothermal Reservoirs,"</strong> investigating the behavior of elements like lithium and rare earths in high-temperature brines. This research supports the group's broader mission to understand fundamental fluid-rock interactions in energy systems and apply these insights to societal challenges like the Energy Transition and geologic carbon sequestration.
+                    I am a <strong>Postdoctoral Research Associate</strong> in the Department of <strong>Geology & Geophysics</strong> at the <strong>University of Wyoming</strong>. I successfully defended my Ph.D. in Earth and Environmental Science from New Mexico Institute of Mining and Technology in July 2025.
+                </p>
+                <p>
+                    I work in the <strong>Experimental Geochemistry Laboratory</strong> with Dr. John Kaszuba's research group. My current postdoctoral work focuses on <strong>"Critical Mineral Mobility in Geothermal Reservoirs,"</strong> investigating the behavior of elements like lithium and rare earths in high-temperature brines. This research supports the group's broader mission to understand fundamental fluid-rock interactions in energy systems and apply these insights to societal challenges like the Energy Transition and geologic carbon sequestration.
                 </p>
                 <p>
                     My doctoral research, supervised by Dr. Alexander Gysi, focused on the experimental and thermodynamic modeling of Rare Earth Elements (REE). Specifically, my dissertation investigated the <strong>speciation of Nd hydroxyl and chloride complexes in hydrothermal aqueous fluids</strong> using calorimetry and solubility experiments.
@@ -625,6 +681,24 @@
                             }
                         });
                     });
+                    
+                    // Carousel Logic
+                    let slideIndex = 0;
+                    const slides = document.getElementsByClassName("carousel-slide");
+                    
+                    function showSlides() {
+                        for (let i = 0; i < slides.length; i++) {
+                            slides[i].classList.remove("active");
+                        }
+                        slideIndex++;
+                        if (slideIndex > slides.length) {slideIndex = 1}
+                        slides[slideIndex-1].classList.add("active");
+                        setTimeout(showSlides, 4000); // Change image every 4 seconds
+                    }
+                    
+                    if (slides.length > 0) {
+                        showSlides();
+                    }
                 });
             </script>
         </footer>
